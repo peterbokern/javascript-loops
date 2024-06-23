@@ -16,8 +16,9 @@ const scores = [
 // 66
 // ==========================================
 
-
-
+// for (let i = 0; i < scores.length ; i++) {
+//     console.log(scores[i].score);
+// }
 
 
 // ==========================================
@@ -31,9 +32,26 @@ const scores = [
 // A
 // D
 // ==========================================
+for (let i = 0; i < scores.length; i++) {
+    const score = scores[i].score;
+    let grade = scores[i].grade;
+    if (score < 60) {
+        grade = "F";
+    } else if (score < 70) {
+        grade = "D";
+    } else if (score < 80) {
+        grade = "C";
+    } else if (score < 90) {
+        grade = "B";
+    } else if (score < 100) {
+        grade = "A";
+    }
+    scores[i].grade = grade
+}
 
-
-
+for (let i = 0; i < scores.length; i++) {
+    console.log(scores[i].grade);
+}
 
 
 // ==========================================
@@ -49,9 +67,7 @@ const scores = [
 //  ];
 // ==========================================
 
-
-
-
+console.log(scores);
 
 // ==========================================
 // Opdracht 2
@@ -74,18 +90,16 @@ const NOVIEmployees = [
 //   { firstName: 'Mark', lastName: 'Rensen', email: 'Mark.Rensen@novi.nl' },
 //  ];
 // ==========================================
+for (let i = 0; i < NOVIEmployees.length; i++) {
+    NOVIEmployees[i].email = `${NOVIEmployees[i].firstName}.${NOVIEmployees[i].lastName}@novi.nl`.toLowerCase();
+}
 
-
-
-
-
-
+console.log(NOVIEmployees)
 // Opdracht 2-BONUS
 // Lukt het je om ervoor te zorgen dat alle e-mailadressen in lowercase letters komen te staan? Dit heb je nog niet geleerd, maar google is your best friend...
-// ==========================================
+// ================e==========================
 
-
-
+// zie antwoord boven"
 
 // ==========================================
 // Opdracht 3
@@ -114,6 +128,20 @@ const students = [
     {name: 'Karima', city: 'Utrecht', zipCode: '3531', neighborhood: null},
 ];
 
+const zipCodes =
+    {
+        3513: 'Pijlsweerd',
+        3514: 'Vogelenbuurt',
+        3512:'Binnenstad',
+        3531: 'Lombok',
+        3572: 'Wittevrouwen',
+    }
+
+for (let i = 0; i < students.length; i++) {
+    students[i].neighborhood = zipCodes[students[i].zipCode]
+}
+
+console.log(students);
 // Verwachte uitkomsten:
 // [
 //     { name: 'Mariska', city: 'Utrecht', zipCode: '3513', neighborhood: 'Pijlsweerd' },
